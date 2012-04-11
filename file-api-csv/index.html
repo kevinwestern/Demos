@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSV</title>
+		<style type='text/css'>
+			#html,body{
+				height: 100%;
+			}
+			#wrapper{
+				width: 1024px;
+				margin: 0 auto;
+				min-height: 100%;
+			}
+			.half{
+				width: 100%;
+				min-height: 400px;
+				border: solid thin black;
+			}
+			.bottom-half{
+				overflow: auto;
+			}
+			#csv-table{
+				width: 900px;
+				float: left;
+				border: solid thin red;
+			}
+			#drophere{
+				width: 100px;
+				height: 100px;
+				border: solid thin black;
+				float: left;
+				margin-left: 10px;
+			}
+			#csv-table tr:hover{
+				background-color: #cecece;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrapper'>
+			<div class='half top-half'>
+
+			</div>
+			<div class='half bottom-half'>				
+				<div id='csv-table'>
+
+				</div>
+				<div id='drophere'>
+					Drop Here
+				</div>
+			</div>
+			<script id='csv-table-template' type='text/x-handlebars-template'>
+				<table cellspacing='0' cellpadding='2'>
+					<thead>
+						<tr>
+							{{#each headers}}
+								<th>{{this}}</th>
+							{{/each}}
+						</tr>
+					</thead>
+					<tbody>
+						{{#each rows}}
+							<tr>
+								{{#each cols}}
+									<td>{{this}}</td>
+								{{/each}}
+							</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</script>
+
+			<script type='text/javascript' src='handlebars.js'></script>
+			<script type='text/javascript'>
+
+				var $ = function(id){ return document.getElementById(id) },
+					templateSource = $('csv-table-template').innerHTML,
+					render = Handlebars.compile(templateSource);
+
+				function parseResult (csvText) {
+					var rows = csvText.split('\n'),
+						header = rows[0],
+						dataView = {
+							headers: header.split(','),
+							rows: []
+						};
+
+					rows.slice(1).forEach(function (row){
+						dataView.rows.push({cols: row.split(',')});
+					});
+
+					$("csv-table").innerHTML = render(dataView);
+				}
+
+				function handleDragOver (evt){
+					evt.stopPropagation();
+					evt.preventDefault();
+					evt.dataTransfer.dropEffect = 'copy';
+				};
+
+				function handleDrop (evt){
+					evt.stopPropagation();
+					evt.preventDefault();
+
+					var files = evt.dataTransfer.files,
+						fileReader = new FileReader();
+
+					for (var i = 0, file; i < files.length; i++){
+						file = files[i];
+						var blob = file.webkitSlice(0, Math.pow(2,20));					
+						fileReader.onloadend = function(evt){
+							if (evt.target.readyState === FileReader.DONE){
+								parseResult(evt.target.result);
+							}
+						};
+						fileReader.readAsText(file);
+					}
+				};
+
+				var dropZone = document.getElementById('drophere');
+				dropZone.addEventListener('dragover', handleDragOver);
+				dropZone.addEventListener('drop', handleDrop);
+			</script>			
+		</div>
+	</body>
+</html>
