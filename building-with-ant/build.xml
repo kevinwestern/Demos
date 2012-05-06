@@ -1,0 +1,57 @@
+<project name="testproject1js" default="default">
+
+  <loadproperties srcfile="build.properties" />
+
+  <tstamp>
+    <format property="timestamp"
+      pattern="MMMM d, yyyy hh:mm:ss"
+      locale="en,US"/> 
+  </tstamp>
+
+  <target name="default">
+    <echo>This is the default task</echo>
+  </target>
+
+  <target name="clean">
+    <delete dir="${dist}" />
+  </target>
+
+  <target name="validate">
+    <echo> Validating ${requiredfiles}, ${appfiles} </echo>
+    <apply executable="java" failonerror="true" parallel="true">      
+      <fileset dir="${src}" includes="${requiredfiles},${appfiles}" />
+      <arg line="-jar"/>
+      <arg path="${rhino}"/>
+      <arg path="${jshint}"/>
+      <arg line="${rhinooptions}" />
+      <srcfile/>
+    </apply>
+  </target>
+
+  <target name="concat">
+    <concat destfile="${dist}/${distName}.js" fixlastline="yes" eol="lf">
+      <header>/* Build Time: ${timestamp} */</header>
+      <filelist dir="${src}" files="app.js, lib/Class.js" />
+    </concat>
+  </target>
+
+  <target name="minify">
+    <apply executable="java" failonerror="true">
+      <filelist dir="${dist}" files="${distName}.js" />
+      <mapper type="glob" from="*.js" to="${dist}/${distName}-min.js" />
+      <arg line="-jar" />
+      <arg path="${closure}" />
+      <arg line="${closureoptions}" />
+      <arg line="--js"/>
+      <srcfile/>
+
+      <arg line="--js_output_file" />
+      <targetfile/>
+    </apply>
+  </target>
+
+  <target name="build" depends="clean,validate,concat,minify">
+
+  </target>
+
+</project>
