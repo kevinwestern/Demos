@@ -24,8 +24,9 @@ var TestBuildOne;
 					break;
 				}
 				else if (!TestBuildOne.Utils.hasOwn(currentLevel, namespaces[i])) {
-					currentLevel = currentLevel[namespaces[i]] = {};
+					currentLevel[namespaces[i]] = {};
 				}
+				currentLevel = currentLevel[namespaces[i]];
 				i++;
 			}
 		}
