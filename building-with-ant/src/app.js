@@ -1,7 +1,7 @@
-var TestBuildOne;
-(function(global) {
+var TestBuildOne = (function() {
 	"use strict";
-	global = {};
+	
+	var global = {};
 	global.Utils = {
 
 		hasOwn: function (obj, prop) {
@@ -37,4 +37,4 @@ var TestBuildOne;
 
 	return global;
 	
-})(TestBuildOne);
+}());

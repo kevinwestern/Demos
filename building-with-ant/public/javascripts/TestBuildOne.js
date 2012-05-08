@@ -1,8 +1,8 @@
-/* Build Time: May 6, 2012 02:08:20 */
-var TestBuildOne;
-(function(global) {
+/* Build Time: May 8, 2012 02:00:10 */
+var TestBuildOne = (function() {
 	"use strict";
-	global = {};
+	
+	var global = {};
 	global.Utils = {
 
 		hasOwn: function (obj, prop) {
@@ -25,8 +25,9 @@ var TestBuildOne;
 					break;
 				}
 				else if (!TestBuildOne.Utils.hasOwn(currentLevel, namespaces[i])) {
-					currentLevel = currentLevel[namespaces[i]] = {};
+					currentLevel[namespaces[i]] = {};
 				}
+				currentLevel = currentLevel[namespaces[i]];
 				i++;
 			}
 		}
@@ -37,7 +38,7 @@ var TestBuildOne;
 
 	return global;
 	
-})(TestBuildOne);
+}());
 /*global TestBuildOne*/
 (function(){
 	"use strict";

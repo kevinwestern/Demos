@@ -1,0 +1,3 @@
+function jasmineTest = function (grunt) {
+	
+};
