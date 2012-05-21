@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Firefox_110_Mac_OS.AppSpec namespace" errors="0" failures="1" tests="1" time="0.0">
-<testcase classname="Firefox_110_Mac_OS.AppSpec namespace" name="should create a namespaced object" time="0.0">
-<failure type="failed" message="[{&quot;message&quot;:&quot;TypeError: TestBuildOne.LevelOne is undefined in http://localhost:4224/test/spec/AppSpec.js (line 12)&quot;,&quot;name&quot;:&quot;TypeError&quot;,&quot;stack&quot;:&quot;\t\t\t()@spec/AppSpec.js:12\n\t\t\t&quot;}]">			()@spec/AppSpec.js:12
-			
-
-</failure>
-</testcase>
-</testsuite>
