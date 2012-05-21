@@ -1,4 +1,4 @@
-/* Build Time: May 21, 2012 01:34:30 */
+/* Build Time: May 21, 2012 02:45:18 */
 var TestBuildOne = {};
 
 TestBuildOne = (function() {
@@ -46,7 +46,9 @@ TestBuildOne = (function() {
 /*global TestBuildOne*/
 (function(){
 	"use strict";
-	TestBuildOne.Utils.namespace('TestBuildOne.Lib.Class', function () {
-		return "This is a Class!";
+	TestBuildOne.Utils.namespace('TestBuildOne.Lib', {
+		'Class': function () {
+			return "This is a Class!";
+		}
 	});
 })();

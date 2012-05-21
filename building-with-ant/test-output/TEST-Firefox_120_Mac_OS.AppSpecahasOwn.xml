@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Firefox_120_Mac_OS.AppSpec hasOwn" errors="0" failures="0" tests="1" time="0.0030">
-<testcase classname="Firefox_120_Mac_OS.AppSpec hasOwn" name="should return true if the object has its own property" time="0.0030"/>
+<testsuite name="Firefox_120_Mac_OS.AppSpec hasOwn" errors="0" failures="0" tests="2" time="0.0010">
+<testcase classname="Firefox_120_Mac_OS.AppSpec hasOwn" name="should return true if the object has its own property" time="0.0010"/>
+<testcase classname="Firefox_120_Mac_OS.AppSpec hasOwn" name="should return false when it does not have its own property" time="0.0"/>
 </testsuite>

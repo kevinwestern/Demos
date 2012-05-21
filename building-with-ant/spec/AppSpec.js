@@ -1,7 +1,17 @@
 describe('AppSpec', function() {
 	describe('hasOwn', function() {
+		var obj = {
+			present: true
+		};
 		it('should return true if the object has its own property', function() {
-			expect(true).toEqual(true);
+			expect(TestBuildOne.Utils.hasOwn(obj, 'present')).toEqual(true);
+		});
+		it('should return false when it does not have its own property', function () {
+			var F = function(){};
+			F.prototype = obj;
+			var newObj = new F;
+
+			expect(TestBuildOne.Utils.hasOwn(newObj, 'present')).toEqual(false);
 		});
 	});
 	describe('namespace', function (){

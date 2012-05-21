@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Chrome_190108446_Mac_OS.AppSpec hasOwn" errors="0" failures="0" tests="1" time="0.0020">
-<testcase classname="Chrome_190108446_Mac_OS.AppSpec hasOwn" name="should return true if the object has its own property" time="0.0020"/>
+<testsuite name="Chrome_190108446_Mac_OS.AppSpec hasOwn" errors="0" failures="0" tests="1" time="0.0040">
+<testcase classname="Chrome_190108446_Mac_OS.AppSpec hasOwn" name="should return true if the object has its own property" time="0.0040"/>
 </testsuite>

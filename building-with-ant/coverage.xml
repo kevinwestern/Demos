@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage
+  SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-03.dtd'>
+<coverage branch-rate="0" branches-covered="0" branches-valid="0" complexity="0" line-rate="0.317307692308" lines-valid="2808" timestamp="1337636740" version="1.9">
+	<sources/>
+	<packages>
+		<package line-rate="1.0" name="public.javascripts">
+			<classes>
+				<class branch-rate="0" complexity="0" filename="public/javascripts/TestBuildOne.js" line-rate="1.0" name="TestBuildOne.js">
+					<lines>
+						<line branch="0" hits="7" number="11"/>
+						<line branch="0" hits="2" number="12"/>
+						<line branch="0" hits="5" number="15"/>
+						<line branch="0" hits="2" number="19"/>
+						<line branch="0" hits="1" number="2"/>
+						<line branch="0" hits="2" number="24"/>
+						<line branch="0" hits="3" number="25"/>
+						<line branch="0" hits="2" number="26"/>
+						<line branch="0" hits="3" number="28"/>
+						<line branch="0" hits="3" number="29"/>
+						<line branch="0" hits="2" number="32"/>
+						<line branch="0" hits="2" number="33"/>
+						<line branch="0" hits="2" number="34"/>
+						<line branch="0" hits="1" number="4"/>
+						<line branch="0" hits="1" number="40"/>
+						<line branch="0" hits="1" number="41"/>
+						<line branch="0" hits="1" number="43"/>
+						<line branch="0" hits="1" number="47"/>
+						<line branch="0" hits="1" number="48"/>
+						<line branch="0" hits="1" number="49"/>
+						<line branch="0" hits="1" number="5"/>
+						<line branch="0" hits="1" number="51"/>
+						<line branch="0" hits="1" number="7"/>
+						<line branch="0" hits="1" number="8"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
+
