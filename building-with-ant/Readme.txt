@@ -17,3 +17,5 @@ python tools/lcov-to-cobertura-xml/lcov-to-cobertura-xml.py test-output/jsTestDr
 Resources:
 http://eriwen.com/tools/perfect-front-end-build/
 http://eriwen.com/tools/continuous-integration-for-javascript/
+http://code.google.com/p/js-test-driver/wiki/GettingStarted
+http://code.google.com/p/js-test-driver/wiki/CommandLineFlags
