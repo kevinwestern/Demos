@@ -8,3 +8,7 @@ To run the build process run: ant build
 
 JUnit formatted reports are sent to ./test-output
 Code coverage reports are sent to ./test-output
+
+To convert the code coverage report do a more readable xml format, run the following:
+python tools/lcov-to-cobertura-xml/lcov-to-cobertura-xml.py test-output/jsTestDriver.conf-coverage.dat -e 'spec|lib'
+(thanks to https://github.com/eriwen/lcov-to-cobertura-xml)
