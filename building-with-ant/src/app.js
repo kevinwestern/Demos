@@ -1,8 +1,6 @@
-/*global document */
-var root = document,
-	TestBuildOne = {};
+var TestBuildOne = {};
 
-root.TestBuildOne = TestBuildOne = (function() {
+TestBuildOne = (function() {
 	"use strict";
 	
 	var global = {};
@@ -12,7 +10,7 @@ root.TestBuildOne = TestBuildOne = (function() {
 			if (Object.prototype.hasOwnProperty.call(obj, prop)) {
 				return true;
 			}
-			
+
 			return false;
 		},
 
@@ -20,7 +18,7 @@ root.TestBuildOne = TestBuildOne = (function() {
 			var namespaces = path.split('.'),
 			i = 1,
 			len = namespaces.length,
-			currentLevel = root[namespaces[0]];
+			currentLevel = TestBuildOne;
 
 			while (i < len) {
 				if (!this.hasOwn(currentLevel, namespaces[i])) {

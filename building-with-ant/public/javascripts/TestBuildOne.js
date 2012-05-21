@@ -1,9 +1,7 @@
-/* Build Time: May 21, 2012 01:25:56 */
-/*global document */
-var root = document,
-	TestBuildOne = {};
+/* Build Time: May 21, 2012 01:34:30 */
+var TestBuildOne = {};
 
-root.TestBuildOne = TestBuildOne = (function() {
+TestBuildOne = (function() {
 	"use strict";
 	
 	var global = {};
@@ -13,7 +11,7 @@ root.TestBuildOne = TestBuildOne = (function() {
 			if (Object.prototype.hasOwnProperty.call(obj, prop)) {
 				return true;
 			}
-			
+
 			return false;
 		},
 
@@ -21,7 +19,7 @@ root.TestBuildOne = TestBuildOne = (function() {
 			var namespaces = path.split('.'),
 			i = 1,
 			len = namespaces.length,
-			currentLevel = root[namespaces[0]];
+			currentLevel = TestBuildOne;
 
 			while (i < len) {
 				if (!this.hasOwn(currentLevel, namespaces[i])) {
