@@ -1,4 +1,8 @@
-var TestBuildOne = (function() {
+/*global document */
+var root = document,
+	TestBuildOne = {};
+
+root.TestBuildOne = TestBuildOne = (function() {
 	"use strict";
 	
 	var global = {};
@@ -8,26 +12,28 @@ var TestBuildOne = (function() {
 			if (Object.prototype.hasOwnProperty.call(obj, prop)) {
 				return true;
 			}
-
+			
 			return false;
 		},
 
 		namespace: function (path, expr) {
 			var namespaces = path.split('.'),
-				i = 0,
-				len = namespaces.length,
-				currentLevel = global;
+			i = 1,
+			len = namespaces.length,
+			currentLevel = root[namespaces[0]];
 
 			while (i < len) {
-				if (i === len - 1) {
-					currentLevel[namespaces[i]] = expr;
-					break;
-				}
-				else if (!TestBuildOne.Utils.hasOwn(currentLevel, namespaces[i])) {
+				if (!this.hasOwn(currentLevel, namespaces[i])) {
 					currentLevel[namespaces[i]] = {};
 				}
 				currentLevel = currentLevel[namespaces[i]];
 				i++;
+			}
+
+			for (var prop in expr) {
+				if (!this.hasOwn(currentLevel, prop)) {
+					currentLevel[prop] = expr[prop];
+				}				
 			}
 		}
 	};

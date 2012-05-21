@@ -9,7 +9,6 @@ describe('AppSpec', function() {
 			TestBuildOne.Utils.namespace('TestBuildOne.LevelOne.LevelTwo', {
 				valid: true
 			});
-			console.log(TestBuildOne);console.log(TestBuildOne);
 			expect(TestBuildOne.LevelOne.LevelTwo.valid).toEqual(true);			
 		});
 	});

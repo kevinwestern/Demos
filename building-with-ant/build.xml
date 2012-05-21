@@ -57,6 +57,7 @@
       <arg line="--server http://localhost:4224"/>
       <arg line="--testOutput test-output"/>
       <arg line="--raiseOnFailure true"/>
+      <arg line="--captureConsole" />
       <arg line="--verbose"/>
       <arg line="--reset"/>
       <arg line="--tests all"/>
