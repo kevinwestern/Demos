@@ -13,7 +13,7 @@
   </target>
 
   <target name="clean">
-    <delete dir="${dist}" />
+    <delete dir="${dist}/javascripts/*.js" />
   </target>
 
   <target name="validate">
@@ -50,7 +50,20 @@
     </apply>
   </target>
 
-  <target name="build" depends="clean,validate,concat,minify">
+  <target name="test" description="(PRIVATE) Run tests through remote jsTestDriver">
+    <exec executable="java" failonerror="true">
+      <arg line="-jar tools/JsTestDriver-1.3.4.b.jar"/>
+      <arg line="--config jsTestDriver.conf"/>
+      <arg line="--server http://localhost:4224"/>
+      <arg line="--testOutput test-output"/>
+      <arg line="--raiseOnFailure true"/>
+      <arg line="--verbose"/>
+      <arg line="--reset"/>
+      <arg line="--tests all"/>
+    </exec>
+  </target>
+
+  <target name="build" depends="clean,validate,concat,test,minify">
 
   </target>
 

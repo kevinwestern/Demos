@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Chrome_190108446_Mac_OS.AppSpec namespace" errors="0" failures="1" tests="1" time="0.0020">
+<testcase classname="Chrome_190108446_Mac_OS.AppSpec namespace" name="should create a namespaced object" time="0.0020">
+<failure type="failed" message="[{&quot;message&quot;:&quot;TypeError: Cannot read property 'LevelTwo' of undefined&quot;,&quot;name&quot;:&quot;TypeError&quot;,&quot;stack&quot;:&quot;\t\t\tTypeError: Cannot read property 'LevelTwo' of undefined\n\t\t\tat [object Object].&lt;anonymous&gt; (spec/AppSpec.js:13:47)&quot;}]">			TypeError: Cannot read property 'LevelTwo' of undefined
+			at [object Object].&lt;anonymous&gt; (spec/AppSpec.js:13:47)
+
+</failure>
+</testcase>
+</testsuite>
